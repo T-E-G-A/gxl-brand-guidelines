@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GXL&CO. — Brand Guidelines</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=sentient@300,301,400,401,700,701&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Core */
+      --navy:        #1B3A6B;
+      --white:       #FFFFFF;
+      --silver:      #C0C8D2;
+
+      /* Secondary */
+      --mid-grey:    #7A8694;
+      --steel-blue:  #4A6FA5;
+
+      /* Accent */
+      --crisp-white: #F8F9FB;
+      --light-silver:#E2E6EA;
+
+      /* Neutral / Background */
+      --cool-white:  #F0F3F7;
+      --pale-blue-grey: #D6DCE8;
+
+      /* Text */
+      --text-navy:   #1B3A6B;
+      --text-slate:  #4A5568;
+      --text-silver: #8A96A8;
+
+      /* Functional */
+      --success:     #2A9D8F;
+      --warning:     #E8A838;
+      --error:       #E05C5C;
+
+      /* Typography */
+      --font-display: 'Teko', sans-serif;
+      --font-body:    'Sentient', serif;
+      --font-mono:    'DM Mono', monospace;
+
+      /* Spacing */
+      --section-gap: 120px;
+      --content-max: 1200px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text-navy);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SIDEBAR NAV ── */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 240px;
+      height: 100vh;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 0;
+      z-index: 100;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      padding: 0 28px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 32px;
+    }
+
+    .sidebar-logo-text {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .sidebar-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--silver);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--steel-blue);
+      padding: 0 28px 10px;
+      margin-top: 16px;
+    }
+
+    .nav-link {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      padding: 8px 28px;
+      transition: color 0.2s, background 0.2s;
+      border-left: 2px solid transparent;
+    }
+
+    .nav-link:hover {
+      color: var(--white);
+      background: rgba(255,255,255,0.05);
+      border-left-color: var(--silver);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      margin-left: 240px;
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: 'GXL&CO.';
+      font-family: var(--font-display);
+      font-size: clamp(120px, 18vw, 260px);
+      font-weight: 700;
+      color: rgba(255,255,255,0.03);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-desc {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--silver);
+      margin-bottom: 32px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: var(--section-gap) 80px;
+      border-bottom: 1px solid var(--pale-blue-grey);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+
+    .section-number {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-silver);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+      min-width: 48px;
+    }
+
+    .section-titles h2 {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .section-titles p {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-slate);
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* ── MISSION / VISION / VALUES ── */
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    .mvv-card {
+      background: var(--cool-white);
+      padding: 48px;
+    }
+
+    .mvv-card:first-child {
+      background: var(--navy);
+    }
+
+    .mvv-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--steel-blue);
+      margin-bottom: 20px;
+    }
+
+    .mvv-card:first-child .mvv-label { color: var(--silver); }
+
+    .mvv-text {
+      font-family: var(--font-body);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-navy);
+      line-height: 1.6;
+    }
+
+    .mvv-card:first-child .mvv-text { color: var(--white); }
+
+    .tagline-block {
+      background: var(--navy);
+      padding: 64px 80px;
+      text-align: center;
+      margin: 0 -80px;
+    }
+
+    .tagline-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 20px;
+    }
+
+    .tagline-text {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .value-card {
+      background: var(--cool-white);
+      padding: 36px 28px;
+      border-top: 3px solid var(--navy);
+    }
+
+    .value-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .value-desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-slate);
+      line-height: 1.6;
+    }
+
+    /* ── LOGO ── */
+    .logo-display {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    .logo-panel {
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .logo-panel.light { background: var(--cool-white); }
+    .logo-panel.dark  { background: var(--navy); }
+
+    .logo-panel-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 24px;
+    }
+
+    .logo-panel.light .logo-panel-label { color: var(--text-silver); }
+    .logo-panel.dark  .logo-panel-label { color: var(--silver); }
+
+    .logo-svg-light text { fill: var(--navy); }
+    .logo-svg-dark  text { fill: var(--white); }
+
+    .dos-donts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .dos-donts-col h4 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid;
+    }
+
+    .dos-col h4 { color: var(--success); border-color: var(--success); }
+    .donts-col h4 { color: var(--error); border-color: var(--error); }
+
+    .dos-donts-col ul { list-style: none; }
+
+    .dos-donts-col ul li {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-slate);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--pale-blue-grey);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .dos-donts-col ul li::before {
+      position: absolute;
+      left: 0;
+      font-size: 12px;
+    }
+
+    .dos-col ul li::before { content: '✓'; color: var(--success); }
+    .donts-col ul li::before { content: '✗'; color: var(--error); }
+
+    /* ── COLOURS ── */
+    .colour-class {
+      margin-bottom: 56px;
+    }
+
+    .colour-class-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-silver);
+      margin-bottom: 16px;
+    }
+
+    .colour-swatches {
+      display: flex;
+      gap: 2px;
+    }
+
+    .swatch {
+      flex: 1;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      position: relative;
+    }
+
+    .swatch-name {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .swatch-hex {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+
+    .swatch.dark .swatch-name,
+    .swatch.dark .swatch-hex { color: rgba(255,255,255,0.9); }
+
+    .swatch.light .swatch-name,
+    .swatch.light .swatch-hex { color: rgba(0,0,0,0.6); }
+
+    /* ── TYPOGRAPHY ── */
+    .type-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 140px 160px 80px 120px 80px 1fr;
+      align-items: center;
+      gap: 24px;
+      padding: 20px 28px;
+      background: var(--cool-white);
+      transition: background 0.2s;
+    }
+
+    .type-row:hover { background: var(--pale-blue-grey); }
+
+    .type-row-header {
+      background: var(--navy) !important;
+      padding: 14px 28px;
+    }
+
+    .type-row-header span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+
+    .type-role {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--steel-blue);
+      letter-spacing: 0.05em;
+    }
+
+    .type-font-name {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-slate);
+    }
+
+    .type-size {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-slate);
+    }
+
+    .type-weight {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-slate);
+    }
+
+    .type-style-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-slate);
+    }
+
+    /* ── ICONOGRAPHY ── */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    .icon-cell {
+      background: var(--cool-white);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-cell svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--navy);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon-spec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .icon-spec {
+      background: var(--cool-white);
+      padding: 32px;
+    }
+
+    .icon-spec-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-silver);
+      margin-bottom: 10px;
+    }
+
+    .icon-spec-value {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* ── IMAGERY ── */
+    .imagery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    .imagery-panel {
+      aspect-ratio: 4/3;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .imagery-mock {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .imagery-mock-1 {
+      background: linear-gradient(135deg, #0d2240 0%, #1B3A6B 40%, #2a5298 100%);
+    }
+
+    .imagery-mock-2 {
+      background: linear-gradient(135deg, #1a2a3a 0%, #2c4a6e 60%, #3a6090 100%);
+    }
+
+    .imagery-mock-3 {
+      background: linear-gradient(135deg, #0a1628 0%, #1B3A6B 50%, #234680 100%);
+    }
+
+    .imagery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(27,58,107,0.3);
+    }
+
+    .imagery-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .imagery-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .imagery-spec {
+      background: var(--cool-white);
+      padding: 36px;
+    }
+
+    .imagery-spec-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-silver);
+      margin-bottom: 12px;
+    }
+
+    .imagery-spec-value {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-slate);
+      line-height: 1.6;
+    }
+
+    /* ── DESIGN ELEMENTS ── */
+    .design-elements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    .design-el-panel {
+      background: var(--cool-white);
+      padding: 48px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .dot-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--pale-blue-grey);
+    }
+
+    .rule-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .rule-line {
+      height: 1px;
+      background: var(--pale-blue-grey);
+    }
+
+    .rule-line.navy { background: var(--navy); height: 2px; }
+    .rule-line.steel { background: var(--steel-blue); }
+
+    .shape-demo {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .shape-sq {
+      width: 32px; height: 32px;
+      border: 1.5px solid var(--navy);
+    }
+
+    .shape-sq.filled { background: var(--navy); }
+    .shape-sq.silver { border-color: var(--silver); }
+
+    .design-el-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-silver);
+    }
+
+    /* ── TONE OF VOICE ── */
+    .tov-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    .tov-card {
+      background: var(--cool-white);
+      padding: 48px;
+    }
+
+    .tov-card.dark {
+      background: var(--navy);
+    }
+
+    .tov-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-silver);
+      margin-bottom: 20px;
+    }
+
+    .tov-card.dark .tov-label { color: var(--silver); }
+
+    .tov-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    .tov-card.dark .tov-title { color: var(--white); }
+
+    .tov-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-slate);
+      line-height: 1.7;
+    }
+
+    .tov-card.dark .tov-desc { color: rgba(255,255,255,0.6); }
+
+    /* ── SOCIAL MEDIA ── */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .social-card {
+      background: var(--cool-white);
+      padding: 36px;
+    }
+
+    .social-platform {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--pale-blue-grey);
+    }
+
+    .social-item {
+      margin-bottom: 16px;
+    }
+
+    .social-item-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--steel-blue);
+      margin-bottom: 6px;
+    }
+
+    .social-item-value {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-slate);
+      line-height: 1.5;
+    }
+
+    /* ── BRAND APPLICATIONS ── */
+    .applications-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .app-card {
+      background: var(--cool-white);
+      padding: 32px 28px;
+    }
+
+    .app-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--navy);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .app-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .app-category {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-silver);
+    }
+
+    /* ── BRAND MISUSE ── */
+    .misuse-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .misuse-card {
+      background: var(--cool-white);
+      padding: 36px;
+    }
+
+    .misuse-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--error);
+    }
+
+    .misuse-list { list-style: none; }
+
+    .misuse-list li {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-slate);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--pale-blue-grey);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .misuse-list li::before {
+      content: '✗';
+      position: absolute;
+      left: 0;
+      color: var(--error);
+      font-size: 11px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--navy);
+      padding: 64px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-meta {
+      text-align: right;
+    }
+
+    .footer-meta p {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver);
+      line-height: 2;
+    }
+
+    /* Utilities */
+    .pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      background: var(--pale-blue-grey);
+      color: var(--navy);
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--pale-blue-grey);
+      margin: 48px 0;
+    }
+
+    .embed-block {
+      background: var(--navy);
+      padding: 24px 28px;
+      border-radius: 0;
+      margin-top: 16px;
+    }
+
+    .embed-block code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--silver);
+      line-height: 1.8;
+      display: block;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-text">GXL&CO.</div>
+      <div class="sidebar-logo-sub">Brand Guidelines</div>
+    </div>
+
+    <span class="nav-section-label">Identity</span>
+    <a class="nav-link" href="#mission">Mission & Vision</a>
+    <a class="nav-link" href="#tagline">Tagline</a>
+    <a class="nav-link" href="#values">Brand Values</a>
+
+    <span class="nav-section-label">Visual</span>
+    <a class="nav-link" href="#logo">Logo Usage</a>
+    <a class="nav-link" href="#colour">Colour</a>
+    <a class="nav-link" href="#typography">Typography</a>
+    <a class="nav-link" href="#iconography">Iconography</a>
+    <a class="nav-link" href="#imagery">Imagery</a>
+    <a class="nav-link" href="#design-elements">Design Elements</a>
+
+    <span class="nav-section-label">Guidelines</span>
+    <a class="nav-link" href="#tone">Tone of Voice</a>
+    <a class="nav-link" href="#social">Social Media</a>
+    <a class="nav-link" href="#applications">Brand Applications</a>
+    <a class="nav-link" href="#misuse">Brand Misuse</a>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-eyebrow">Brand Guidelines — 2025</div>
+      <div class="hero-rule"></div>
+      <div class="hero-title">GXL&CO.<br>Brand System</div>
+      <p class="hero-desc">A comprehensive guide to the GXL&CO. brand — how it looks, sounds and shows up across every platform and stage.</p>
+    </div>
+
+    <!-- 01 MISSION & VISION -->
+    <section id="mission">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <div class="section-titles">
+          <h2>Mission & Vision</h2>
+          <p>The foundation of everything GXL&CO. does — why we exist and where we're headed.</p>
+        </div>
+      </div>
+
+      <div class="mvv-grid">
+        <div class="mvv-card">
+          <div class="mvv-label">Mission</div>
+          <div class="mvv-text">To deliver precision-led media and event experiences that elevate brands and leave lasting impressions.</div>
+        </div>
+        <div class="mvv-card">
+          <div class="mvv-label">Vision</div>
+          <div class="mvv-text" style="color:var(--text-navy)">To be the most trusted name in media and event management across every platform and stage.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 TAGLINE -->
+    <section id="tagline" style="padding-left:0;padding-right:0;border-bottom:1px solid var(--pale-blue-grey);">
+      <div style="padding:0 80px">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <div class="section-titles">
+            <h2>Tagline</h2>
+            <p>The single line that captures the GXL&CO. brand essence.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tagline-block">
+        <div class="tagline-label">Official Tagline</div>
+        <div class="tagline-text">Your Story. Our Stage.</div>
+      </div>
+    </section>
+
+    <!-- 03 BRAND VALUES -->
+    <section id="values">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <div class="section-titles">
+          <h2>Brand Values</h2>
+          <p>Five principles that underpin everything we create and every relationship we build.</p>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-name">Excellence</div>
+          <div class="value-desc">Setting and maintaining the highest standard in every project, every time.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-name">Precision</div>
+          <div class="value-desc">Deliberate, detail-oriented execution across all media and event touchpoints.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-name">Integrity</div>
+          <div class="value-desc">Honest, transparent relationships with clients, partners and audiences.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-name">Impact</div>
+          <div class="value-desc">Creating work that moves people, drives conversations and leaves lasting impressions.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-name">Creativity</div>
+          <div class="value-desc">Bringing fresh thinking and bold ideas to every brief.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 LOGO USAGE -->
+    <section id="logo">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <div class="section-titles">
+          <h2>Logo Usage</h2>
+          <p>The GXL&CO. wordmark and logomark. Consistent, unaltered, always.</p>
+        </div>
+      </div>
+
+      <!-- Logo panels -->
+      <div class="logo-display">
+        <div class="logo-panel light">
+          <img src="https://i.ibb.co/HThKrKtm/Light-Mode-Logo.png" alt="GXL&CO. Light Mode Logo" style="max-width:280px; width:100%; height:auto; object-fit:contain;">
+          <div class="logo-panel-label">Primary — Light Background</div>
+        </div>
+        <div class="logo-panel dark">
+          <img src="https://i.ibb.co/JJFCQb3/Dark-Mode-Logo.png" alt="GXL&CO. Dark Mode Logo" style="max-width:280px; width:100%; height:auto; object-fit:contain;">
+          <div class="logo-panel-label">Reversed — Dark Background</div>
+        </div>
+      </div>
+
+      <!-- Logomark panels -->
+      <div class="logo-display" style="margin-bottom:48px;">
+        <div class="logo-panel light" style="padding:60px;">
+          <img src="https://i.ibb.co/sdxsZ7f2/Light-Mode-Logo-mark.png" alt="GXL&CO. Light Mode Logomark" style="max-width:120px; width:100%; height:auto; object-fit:contain;">
+          <div class="logo-panel-label">Logomark — Light</div>
+        </div>
+        <div class="logo-panel dark" style="padding:60px;">
+          <img src="https://i.ibb.co/bjG4J3Pr/Dark-Mode-Logomark.png" alt="GXL&CO. Dark Mode Logomark" style="max-width:120px; width:100%; height:auto; object-fit:contain;">
+          <div class="logo-panel-label">Logomark — Dark</div>
+        </div>
+      </div>
+
+      <!-- Dos & Don'ts -->
+      <div class="dos-donts">
+        <div class="dos-donts-col dos-col">
+          <h4>Do</h4>
+          <ul>
+            <li>Use the logo on approved brand backgrounds only</li>
+            <li>Maintain clear space around the logo at all times</li>
+            <li>Use the logomark alone when space is limited</li>
+            <li>Always use approved file formats</li>
+          </ul>
+        </div>
+        <div class="dos-donts-col donts-col">
+          <h4>Don't</h4>
+          <ul>
+            <li>Stretch or distort the logo</li>
+            <li>Rotate the logo</li>
+            <li>Change the logo colours</li>
+            <li>Add effects such as shadows, gradients or outlines</li>
+            <li>Place the logo on busy or clashing backgrounds</li>
+            <li>Recreate or redraw the logo</li>
+            <li>Use the logomark and wordmark in an unapproved layout</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 COLOUR -->
+    <section id="colour">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <div class="section-titles">
+          <h2>Colour</h2>
+          <p>A structured palette built around the GXL&CO. navy — cool, authoritative and precise.</p>
+        </div>
+      </div>
+
+      <!-- Core -->
+      <div class="colour-class">
+        <div class="colour-class-label">Core</div>
+        <div class="colour-swatches">
+          <div class="swatch dark" style="background:#1B3A6B; flex:2;">
+            <div class="swatch-name">Navy</div>
+            <div class="swatch-hex">#1B3A6B</div>
+          </div>
+          <div class="swatch dark" style="background:#FFFFFF; flex:1; border:1px solid #E2E6EA;">
+            <div class="swatch-name" style="color:rgba(0,0,0,0.5)">White</div>
+            <div class="swatch-hex" style="color:rgba(0,0,0,0.4)">#FFFFFF</div>
+          </div>
+          <div class="swatch dark" style="background:#C0C8D2; flex:1;">
+            <div class="swatch-name" style="color:rgba(0,0,0,0.6)">Silver</div>
+            <div class="swatch-hex" style="color:rgba(0,0,0,0.4)">#C0C8D2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div class="colour-class">
+        <div class="colour-class-label">Secondary</div>
+        <div class="colour-swatches">
+          <div class="swatch dark" style="background:#7A8694; flex:1;">
+            <div class="swatch-name">Mid Grey</div>
+            <div class="swatch-hex">#7A8694</div>
+          </div>
+          <div class="swatch dark" style="background:#4A6FA5; flex:1;">
+            <div class="swatch-name">Steel Blue</div>
+            <div class="swatch-hex">#4A6FA5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accent -->
+      <div class="colour-class">
+        <div class="colour-class-label">Accent</div>
+        <div class="colour-swatches">
+          <div class="swatch light" style="background:#F8F9FB; flex:1; border:1px solid #E2E6EA;">
+            <div class="swatch-name">Crisp White</div>
+            <div class="swatch-hex">#F8F9FB</div>
+          </div>
+          <div class="swatch light" style="background:#E2E6EA; flex:1;">
+            <div class="swatch-name">Light Silver</div>
+            <div class="swatch-hex">#E2E6EA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neutral / Background -->
+      <div class="colour-class">
+        <div class="colour-class-label">Neutral / Background</div>
+        <div class="colour-swatches">
+          <div class="swatch light" style="background:#F0F3F7; flex:1; border:1px solid #E2E6EA;">
+            <div class="swatch-name">Cool White</div>
+            <div class="swatch-hex">#F0F3F7</div>
+          </div>
+          <div class="swatch light" style="background:#D6DCE8; flex:1;">
+            <div class="swatch-name">Pale Blue Grey</div>
+            <div class="swatch-hex">#D6DCE8</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="colour-class">
+        <div class="colour-class-label">Text</div>
+        <div class="colour-swatches">
+          <div class="swatch dark" style="background:#1B3A6B; flex:1;">
+            <div class="swatch-name">Dark Navy</div>
+            <div class="swatch-hex">#1B3A6B</div>
+          </div>
+          <div class="swatch dark" style="background:#4A5568; flex:1;">
+            <div class="swatch-name">Slate Grey</div>
+            <div class="swatch-hex">#4A5568</div>
+          </div>
+          <div class="swatch dark" style="background:#8A96A8; flex:1;">
+            <div class="swatch-name">Silver</div>
+            <div class="swatch-hex">#8A96A8</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Functional -->
+      <div class="colour-class">
+        <div class="colour-class-label">Functional</div>
+        <div class="colour-swatches">
+          <div class="swatch dark" style="background:#2A9D8F; flex:1;">
+            <div class="swatch-name">Success</div>
+            <div class="swatch-hex">#2A9D8F</div>
+          </div>
+          <div class="swatch dark" style="background:#E8A838; flex:1;">
+            <div class="swatch-name">Warning</div>
+            <div class="swatch-hex">#E8A838</div>
+          </div>
+          <div class="swatch dark" style="background:#E05C5C; flex:1;">
+            <div class="swatch-name">Error</div>
+            <div class="swatch-hex">#E05C5C</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 TYPOGRAPHY -->
+    <section id="typography">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <div class="section-titles">
+          <h2>Typography</h2>
+          <p>A three-font system — Teko for impact, Sentient for elegance, DM Mono for precision.</p>
+        </div>
+      </div>
+
+      <!-- Font Embeds -->
+      <div style="margin-bottom:48px;">
+        <div class="colour-class-label" style="margin-bottom:12px;">Font Embeds</div>
+        <div class="embed-block">
+          <code>&lt;!-- Google Fonts: Teko + DM Mono --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Teko:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9fe8f8f7ebdfacafafb1b1a8afaf">[email&#160;protected]</a>&amp;display=swap" rel="stylesheet"&gt;
+
+&lt;!-- Fontshare: Sentient --&gt;
+&lt;link href="https://api.fontshare.com/v2/css?f[]=sentient@300,301,400,401,700,701&amp;display=swap" rel="stylesheet"&gt;</code>
+        </div>
+      </div>
+
+      <!-- Type Scale Table -->
+      <div class="type-stack">
+        <div class="type-row type-row-header">
+          <span>Role</span>
+          <span>Font</span>
+          <span>Size</span>
+          <span>Weight</span>
+          <span>Style</span>
+          <span>Preview</span>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">Display</div>
+          <div class="type-font-name">Teko</div>
+          <div class="type-size">80px</div>
+          <div class="type-weight">Bold 700</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Teko',sans-serif;font-size:36px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:0.02em;">GXL&CO.</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">H1</div>
+          <div class="type-font-name">Teko</div>
+          <div class="type-size">64px</div>
+          <div class="type-weight">Bold 700</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Teko',sans-serif;font-size:30px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:0.02em;">Heading One</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">H2</div>
+          <div class="type-font-name">Teko</div>
+          <div class="type-size">48px</div>
+          <div class="type-weight">SemiBold 600</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Teko',sans-serif;font-size:24px;font-weight:600;color:var(--navy);line-height:1;letter-spacing:0.02em;">Heading Two</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">H3</div>
+          <div class="type-font-name">Sentient</div>
+          <div class="type-size">36px</div>
+          <div class="type-weight">Bold 700</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Sentient',serif;font-size:22px;font-weight:700;color:var(--navy);">Heading Three</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">H4</div>
+          <div class="type-font-name">Sentient</div>
+          <div class="type-size">28px</div>
+          <div class="type-weight">Bold 700</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Sentient',serif;font-size:18px;font-weight:700;color:var(--navy);">Heading Four</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">Body Large</div>
+          <div class="type-font-name">Sentient</div>
+          <div class="type-size">18px</div>
+          <div class="type-weight">Regular 400</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Sentient',serif;font-size:15px;font-weight:400;color:var(--text-slate);">Body large text — media and events.</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">Body</div>
+          <div class="type-font-name">Sentient</div>
+          <div class="type-size">16px</div>
+          <div class="type-weight">Regular 400</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Sentient',serif;font-size:14px;font-weight:400;color:var(--text-slate);">Body text for general content use.</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">Body Small</div>
+          <div class="type-font-name">Sentient</div>
+          <div class="type-size">14px</div>
+          <div class="type-weight">Light 300</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'Sentient',serif;font-size:13px;font-weight:300;color:var(--text-slate);">Body small text for secondary content.</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">Quote</div>
+          <div class="type-font-name">Sentient</div>
+          <div class="type-size">16px</div>
+          <div class="type-weight">Regular 400</div>
+          <div class="type-style-tag">Italic</div>
+          <div style="font-family:'Sentient',serif;font-size:14px;font-weight:400;font-style:italic;color:var(--text-slate);">"Your story. Our stage."</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">Caption</div>
+          <div class="type-font-name">Sentient</div>
+          <div class="type-size">12px</div>
+          <div class="type-weight">Light 300</div>
+          <div class="type-style-tag">Italic</div>
+          <div style="font-family:'Sentient',serif;font-size:11px;font-weight:300;font-style:italic;color:var(--text-silver);">Image caption text</div>
+        </div>
+
+        <div class="type-row">
+          <div class="type-role">Mono / Label</div>
+          <div class="type-font-name">DM Mono</div>
+          <div class="type-size">13px</div>
+          <div class="type-weight">Regular 400</div>
+          <div class="type-style-tag">Normal</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:400;color:var(--steel-blue);letter-spacing:0.08em;">GXL_BRAND_V1.0</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 ICONOGRAPHY -->
+    <section id="iconography">
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <div class="section-titles">
+          <h2>Iconography</h2>
+          <p>Phosphor Icons — outlined, consistent, purposeful.</p>
+        </div>
+      </div>
+
+      <!-- Icon examples -->
+      <div class="icon-grid">
+        <!-- Camera -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <!-- Mic -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+        <!-- Monitor -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <!-- Calendar -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <!-- Users -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <!-- Globe -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <!-- Film -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg></div>
+        <!-- Star -->
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      </div>
+
+      <div class="icon-spec-grid">
+        <div class="icon-spec">
+          <div class="icon-spec-label">Library</div>
+          <div class="icon-spec-value">Phosphor Icons</div>
+        </div>
+        <div class="icon-spec">
+          <div class="icon-spec-label">Default Weight</div>
+          <div class="icon-spec-value">Regular</div>
+        </div>
+        <div class="icon-spec">
+          <div class="icon-spec-label">Emphasis Weight</div>
+          <div class="icon-spec-value">Bold</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 IMAGERY -->
+    <section id="imagery">
+      <div class="section-header">
+        <span class="section-number">08</span>
+        <div class="section-titles">
+          <h2>Imagery & Photography</h2>
+          <p>Cinematic, atmospheric, cool-toned. Every image should feel considered and on-brand.</p>
+        </div>
+      </div>
+
+      <div class="imagery-grid" style="margin-bottom:48px;">
+        <div class="imagery-panel">
+          <div class="imagery-mock imagery-mock-1"></div>
+          <div class="imagery-overlay"></div>
+          <div class="imagery-label">Cinematic — Primary</div>
+        </div>
+        <div class="imagery-panel">
+          <div class="imagery-mock imagery-mock-2"></div>
+          <div class="imagery-overlay"></div>
+          <div class="imagery-label">Event Coverage</div>
+        </div>
+        <div class="imagery-panel">
+          <div class="imagery-mock imagery-mock-3"></div>
+          <div class="imagery-overlay"></div>
+          <div class="imagery-label">Brand Campaign</div>
+        </div>
+      </div>
+
+      <div class="imagery-specs" style="margin-bottom:48px;">
+        <div class="imagery-spec">
+          <div class="imagery-spec-label">Direction</div>
+          <div class="imagery-spec-value">Cinematic, atmospheric. Strong composition, dramatic professional lighting.</div>
+        </div>
+        <div class="imagery-spec">
+          <div class="imagery-spec-label">Colour Treatment</div>
+          <div class="imagery-spec-value">Cool-toned grading leaning into deep blues and grey tones tied to the brand palette.</div>
+        </div>
+        <div class="imagery-spec">
+          <div class="imagery-spec-label">Overlay</div>
+          <div class="imagery-spec-value">Subtle navy overlay where needed for text legibility or brand consistency.</div>
+        </div>
+        <div class="imagery-spec">
+          <div class="imagery-spec-label">Consistency</div>
+          <div class="imagery-spec-value">Best effort across all touchpoints. Treatment should always make reasonable effort to align with the palette.</div>
+        </div>
+      </div>
+
+      <div class="dos-donts">
+        <div class="dos-donts-col dos-col">
+          <h4>Do</h4>
+          <ul>
+            <li>Use images with strong, cinematic composition</li>
+            <li>Apply cool-toned colour grading tied to the brand palette</li>
+            <li>Capture authentic, candid moments at events</li>
+            <li>Use natural or dramatic professional lighting</li>
+            <li>Ensure subjects are sharp and well-framed</li>
+            <li>Use images that convey energy, professionalism and impact</li>
+            <li>Apply a subtle navy overlay where needed for text legibility</li>
+          </ul>
+        </div>
+        <div class="dos-donts-col donts-col">
+          <h4>Don't</h4>
+          <ul>
+            <li>Use warm, orange-toned or heavily filtered images</li>
+            <li>Use overly staged or stock-looking photography</li>
+            <li>Use low resolution or poorly lit images</li>
+            <li>Use busy, cluttered compositions</li>
+            <li>Apply heavy vignettes or outdated filters</li>
+            <li>Use imagery that feels off-brand in tone</li>
+            <li>Crop subjects awkwardly or use poor framing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 DESIGN ELEMENTS -->
+    <section id="design-elements">
+      <div class="section-header">
+        <span class="section-number">09</span>
+        <div class="section-titles">
+          <h2>Design Elements</h2>
+          <p>Minimal graphic devices — dot grids, thin rules, sparse geometric shapes. Used sparingly, always from the brand palette.</p>
+        </div>
+      </div>
+
+      <div class="design-elements-grid">
+        <div class="design-el-panel">
+          <div class="dot-grid">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot" style="background:var(--navy)"></div><div class="dot" style="background:var(--navy)"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <div class="dot" style="background:var(--steel-blue)"></div><div class="dot" style="background:var(--steel-blue)"></div><div class="dot" style="background:var(--steel-blue)"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <div class="design-el-label">Dot Grid</div>
+        </div>
+
+        <div class="design-el-panel">
+          <div class="rule-demo" style="width:80%">
+            <div class="rule-line navy"></div>
+            <div class="rule-line"></div>
+            <div class="rule-line steel"></div>
+            <div class="rule-line" style="background:var(--pale-blue-grey)"></div>
+            <div class="rule-line navy"></div>
+          </div>
+          <div class="design-el-label">Thin Rules / Dividers</div>
+        </div>
+
+        <div class="design-el-panel">
+          <div class="shape-demo">
+            <div class="shape-sq"></div>
+            <div class="shape-sq filled"></div>
+            <div class="shape-sq silver"></div>
+            <div class="shape-sq" style="border-color:var(--steel-blue); width:16px; height:16px;"></div>
+            <div class="shape-sq filled" style="background:var(--steel-blue); width:16px; height:16px;"></div>
+          </div>
+          <div class="design-el-label">Geometric Shapes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 TONE OF VOICE -->
+    <section id="tone">
+      <div class="section-header">
+        <span class="section-number">10</span>
+        <div class="section-titles">
+          <h2>Tone of Voice</h2>
+          <p>Authoritative and polished on the surface. Sophisticated and understated underneath.</p>
+        </div>
+      </div>
+
+      <div class="tov-grid">
+        <div class="tov-card dark">
+          <div class="tov-label">Primary Tone</div>
+          <div class="tov-title">Authoritative & Polished</div>
+          <div class="tov-desc">Confident, professional, precise. GXL&CO. says a lot with few words. We command respect without demanding it.</div>
+        </div>
+        <div class="tov-card">
+          <div class="tov-label">Underlying Quality</div>
+          <div class="tov-title">Sophisticated & Understated</div>
+          <div class="tov-desc">Calm and assured. Editorial in nature. We never over-explain. The work speaks — we simply give it a voice.</div>
+        </div>
+        <div class="tov-card">
+          <div class="tov-label">In Practice</div>
+          <div class="tov-title">Write with Purpose</div>
+          <div class="tov-desc">Every word earns its place. Lead with the most important point. Use active voice. Avoid jargon, filler phrases and unnecessary explanation.</div>
+        </div>
+        <div class="tov-card dark">
+          <div class="tov-label">What We Are Not</div>
+          <div class="tov-title">Never Loud. Never Vague.</div>
+          <div class="tov-desc">We don't shout. We don't over-promise. We don't pad copy with buzzwords. We are precise, deliberate and always on-brand.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 SOCIAL MEDIA -->
+    <section id="social">
+      <div class="section-header">
+        <span class="section-number">11</span>
+        <div class="section-titles">
+          <h2>Social Media</h2>
+          <p>Platform-specific guidance for maintaining a consistent, on-brand presence.</p>
+        </div>
+      </div>
+
+      <div class="social-grid">
+
+        <div class="social-card">
+          <div class="social-platform">Instagram</div>
+          <div class="social-item">
+            <div class="social-item-label">Content Types</div>
+            <div class="social-item-value">Event photography, behind the scenes, brand campaigns, reels, client spotlights</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Tone</div>
+            <div class="social-item-value">Polished, visual-first, minimal copy. Let imagery do the talking.</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Visual Rules</div>
+            <div class="social-item-value">Cinematic colour treatment, consistent brand overlay where needed</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Hashtags</div>
+            <div class="social-item-value">#GXLandCO + relevant industry tags (#EventManagement #MediaProduction)</div>
+          </div>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform">LinkedIn</div>
+          <div class="social-item">
+            <div class="social-item-label">Content Types</div>
+            <div class="social-item-value">Company updates, industry insights, case studies, team highlights, event announcements</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Tone</div>
+            <div class="social-item-value">Authoritative, professional, thought-leadership driven</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Visual Rules</div>
+            <div class="social-item-value">Clean branded templates, minimal graphic devices, brand colour palette</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Hashtags</div>
+            <div class="social-item-value">Sparingly, 3–5 per post (#MediaAndEvents #EventManagement #GXLandCO)</div>
+          </div>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform">X / Twitter</div>
+          <div class="social-item">
+            <div class="social-item-label">Content Types</div>
+            <div class="social-item-value">Real-time event coverage, industry commentary, quick updates, reposts</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Tone</div>
+            <div class="social-item-value">Sharp, concise, confident. No fluff.</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Visual Rules</div>
+            <div class="social-item-value">Brand colours where possible, clean and uncluttered</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Hashtags</div>
+            <div class="social-item-value">Event-specific and trending industry tags, keep it contextual</div>
+          </div>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform">Facebook</div>
+          <div class="social-item">
+            <div class="social-item-label">Content Types</div>
+            <div class="social-item-value">Event pages, community updates, longer-form posts, photo albums</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Tone</div>
+            <div class="social-item-value">Approachable but professional. Slightly warmer than LinkedIn.</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Visual Rules</div>
+            <div class="social-item-value">Consistent with overall brand, event photography forward</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Hashtags</div>
+            <div class="social-item-value">Minimal, only where relevant</div>
+          </div>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform">YouTube</div>
+          <div class="social-item">
+            <div class="social-item-label">Content Types</div>
+            <div class="social-item-value">Event recaps, media productions, brand films, behind the scenes</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Tone</div>
+            <div class="social-item-value">Cinematic, storytelling-led, brand-forward</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Visual Rules</div>
+            <div class="social-item-value">Branded thumbnails using Teko for titles, consistent colour treatment on all video</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Hashtags</div>
+            <div class="social-item-value">Relevant to each video, keep it focused</div>
+          </div>
+        </div>
+
+        <div class="social-card">
+          <div class="social-platform">TikTok</div>
+          <div class="social-item">
+            <div class="social-item-label">Content Types</div>
+            <div class="social-item-value">Behind the scenes, event highlights, quick cuts, trending formats</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Tone</div>
+            <div class="social-item-value">Energetic but still on-brand. Never off-character.</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Visual Rules</div>
+            <div class="social-item-value">Fast-paced editing, brand colours where possible, avoid unbranded content</div>
+          </div>
+          <div class="social-item">
+            <div class="social-item-label">Hashtags</div>
+            <div class="social-item-value">Trending and event-specific, keep it natural</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 12 BRAND APPLICATIONS -->
+    <section id="applications">
+      <div class="section-header">
+        <span class="section-number">12</span>
+        <div class="section-titles">
+          <h2>Brand Applications</h2>
+          <p>How the GXL&CO. brand shows up across every touchpoint.</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <div class="colour-class-label" style="margin-bottom:16px;">Print</div>
+        <div class="applications-grid">
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="1"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="6" y1="16" x2="14" y2="16"/></svg></div>
+            <div class="app-title">Business Cards</div>
+            <div class="app-category">Print</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="app-title">Letterhead & Envelopes</div>
+            <div class="app-category">Print</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <div class="app-title">Event Programmes</div>
+            <div class="app-category">Print</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+            <div class="app-title">Signage & Banners</div>
+            <div class="app-category">Print</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <div class="colour-class-label" style="margin-bottom:16px;">Digital</div>
+        <div class="applications-grid">
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="app-title">Website</div>
+            <div class="app-category">Digital</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+            <div class="app-title">Social Media Templates</div>
+            <div class="app-category">Digital</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div class="app-title">Email Signatures</div>
+            <div class="app-category">Digital</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div class="app-title">Presentation Templates</div>
+            <div class="app-category">Digital</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="colour-class-label" style="margin-bottom:16px;">Event Specific</div>
+        <div class="applications-grid">
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="app-title">Name Badges & Lanyards</div>
+            <div class="app-category">Event Specific</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+            <div class="app-title">Stage Backdrops</div>
+            <div class="app-category">Event Specific</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div class="app-title">Merchandise</div>
+            <div class="app-category">Event Specific</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon"><svg viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg></div>
+            <div class="app-title">Event Tickets</div>
+            <div class="app-category">Event Specific</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 BRAND MISUSE -->
+    <section id="misuse">
+      <div class="section-header">
+        <span class="section-number">13</span>
+        <div class="section-titles">
+          <h2>Brand Misuse</h2>
+          <p>What not to do — across the entire brand system.</p>
+        </div>
+      </div>
+
+      <div class="misuse-grid">
+        <div class="misuse-card">
+          <div class="misuse-title">Typography</div>
+          <ul class="misuse-list">
+            <li>Don't use fonts outside of the approved stack</li>
+            <li>Don't mix more than the approved font roles</li>
+            <li>Don't use decorative or script fonts alongside brand fonts</li>
+            <li>Don't set body copy in Teko</li>
+            <li>Don't use font weights outside of the approved scale</li>
+          </ul>
+        </div>
+        <div class="misuse-card">
+          <div class="misuse-title">Colour</div>
+          <ul class="misuse-list">
+            <li>Don't use colours outside of the approved palette</li>
+            <li>Don't use gradients unless specifically approved</li>
+            <li>Don't place text in non-approved colour combinations</li>
+            <li>Don't use colour in ways that reduce accessibility or legibility</li>
+          </ul>
+        </div>
+        <div class="misuse-card">
+          <div class="misuse-title">Imagery</div>
+          <ul class="misuse-list">
+            <li>Don't use warm-toned or heavily filtered photography</li>
+            <li>Don't mix brand imagery with off-brand stock photography</li>
+            <li>Don't use illustrations or clip art unless specifically approved</li>
+          </ul>
+        </div>
+        <div class="misuse-card">
+          <div class="misuse-title">Iconography</div>
+          <ul class="misuse-list">
+            <li>Don't mix Phosphor icon weights inconsistently</li>
+            <li>Don't use icon libraries outside of Phosphor</li>
+            <li>Don't resize icons disproportionately</li>
+          </ul>
+        </div>
+        <div class="misuse-card" style="grid-column: 1 / -1;">
+          <div class="misuse-title">General</div>
+          <ul class="misuse-list" style="columns:2; gap:40px;">
+            <li>Don't combine brand elements in unapproved ways</li>
+            <li>Don't create new brand assets without following the guidelines</li>
+            <li>Don't use the brand in contexts that conflict with brand values</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-logo">GXL&CO.</div>
+      <div class="footer-meta">
+        <p>Brand Guidelines</p>
+        <p>Media & Event Ma
