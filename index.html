@@ -72,15 +72,56 @@
       background: var(--navy);
       display: flex;
       flex-direction: column;
-      padding: 40px 0;
+      padding: 20px 0;
       z-index: 100;
       overflow-y: auto;
+      overflow-x: hidden;
+      transition: width 0.3s ease;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+      overflow-y: hidden;
+    }
+
+    .sidebar-toggle {
+      display: block;
+      align-self: flex-end;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      z-index: 101;
+    }
+
+    .sidebar-toggle::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 16px;
+      background: linear-gradient(to bottom, var(--white) 0%, var(--white) 2px, transparent 2px, transparent 7px, var(--white) 7px, var(--white) 9px, transparent 9px, transparent 14px, var(--white) 14px, var(--white) 16px);
+      transition: all 0.3s ease;
+    }
+
+    .sidebar.collapsed .sidebar-toggle::before {
+      background: linear-gradient(to bottom, var(--white) 0%, var(--white) 2px, transparent 2px, transparent 7px, var(--white) 7px, var(--white) 9px, transparent 9px, transparent 14px, var(--white) 14px, var(--white) 16px);
     }
 
     .sidebar-logo {
-      padding: 0 28px 40px;
+      padding: 20px 28px 32px;
       border-bottom: 1px solid rgba(255,255,255,0.1);
       margin-bottom: 32px;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .sidebar.collapsed .sidebar-logo {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      padding: 0 8px 20px;
+      margin-bottom: 16px;
+      height: 0;
     }
 
     .sidebar-logo-text {
@@ -108,6 +149,16 @@
       color: var(--steel-blue);
       padding: 0 28px 10px;
       margin-top: 16px;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .sidebar.collapsed .nav-section-label {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      padding: 0;
+      margin-top: 8px;
+      height: 0;
     }
 
     .nav-link {
@@ -118,8 +169,15 @@
       color: rgba(255,255,255,0.65);
       text-decoration: none;
       padding: 8px 28px;
-      transition: color 0.2s, background 0.2s;
+      transition: color 0.2s, background 0.2s, opacity 0.3s, visibility 0.3s;
       border-left: 2px solid transparent;
+    }
+
+    .sidebar.collapsed .nav-link {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      padding: 8px;
     }
 
     .nav-link:hover {
@@ -132,6 +190,11 @@
     .main {
       margin-left: 240px;
       min-height: 100vh;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.collapsed ~ .main {
+      margin-left: 60px;
     }
 
     /* ── HERO ── */
@@ -971,6 +1034,330 @@
       display: block;
       white-space: pre-wrap;
       word-break: break-all;
+      overflow-x: auto;
+    }
+
+    /* ── MOBILE & TABLET RESPONSIVE STYLES ── */
+    @media (max-width: 1024px) {
+      :root {
+        --section-gap: 60px;
+      }
+
+      section {
+        padding: var(--section-gap) 40px;
+      }
+
+      .hero {
+        padding: 40px;
+      }
+
+      .section-header {
+        gap: 20px;
+      }
+
+      .section-number {
+        min-width: 30px;
+      }
+
+      .section-titles h2 {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-gap: 40px;
+      }
+
+      /* Auto-collapse sidebar on mobile */
+      .sidebar {
+        width: 60px;
+        overflow-y: hidden;
+      }
+
+      .sidebar-logo {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-section-label {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-link {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      .main {
+        margin-left: 60px;
+      }
+
+      section {
+        padding: var(--section-gap) 24px;
+      }
+
+      .hero {
+        padding: 30px 20px;
+      }
+
+      .hero::before {
+        font-size: clamp(60px, 12vw, 120px);
+      }
+
+      .hero-title {
+        font-size: clamp(28px, 5vw, 48px);
+      }
+
+      .hero-desc {
+        font-size: 14px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .section-titles h2 {
+        font-size: 28px;
+      }
+
+      .section-titles p {
+        font-size: 13px;
+      }
+
+      /* Responsive Grids */
+      .mvv-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-display {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-panel {
+        padding: 40px;
+        min-height: 200px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .dos-donts {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .colour-swatches {
+        flex-wrap: wrap;
+      }
+
+      .icon-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .icon-spec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .imagery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .imagery-specs {
+        grid-template-columns: 1fr;
+      }
+
+      .design-elements-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tov-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .applications-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .misuse-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Typography Table Horizontal Scroll */
+      .type-stack {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .type-row {
+        display: grid;
+        grid-template-columns: 100px 120px 60px 100px 60px 1fr;
+        gap: 12px;
+        padding: 16px 20px;
+        min-width: 600px;
+      }
+
+      .type-row-header {
+        padding: 12px 20px;
+      }
+
+      .type-row-header span {
+        font-size: 8px;
+      }
+
+      .type-role {
+        font-size: 10px;
+      }
+
+      .type-font-name,
+      .type-size,
+      .type-weight,
+      .type-style-tag {
+        font-size: 10px;
+      }
+
+      /* Tagline */
+      .tagline-block {
+        padding: 40px 20px;
+        margin: 0 -24px;
+      }
+
+      .tagline-text {
+        font-size: clamp(24px, 4vw, 48px);
+      }
+
+      /* Footer */
+      .footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 20px;
+      }
+
+      .footer-logo {
+        font-size: 24px;
+      }
+
+      .footer-meta {
+        text-align: left;
+      }
+
+      /* Value Cards */
+      .value-card {
+        padding: 24px 20px;
+      }
+
+      .value-name {
+        font-size: 16px;
+      }
+
+      .value-desc {
+        font-size: 12px;
+      }
+
+      /* Social Cards */
+      .social-card {
+        padding: 24px;
+      }
+
+      .social-platform {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+
+      .social-item-label {
+        font-size: 8px;
+      }
+
+      .social-item-value {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --section-gap: 24px;
+      }
+
+      .sidebar {
+        width: 50px;
+      }
+
+      .main {
+        margin-left: 50px;
+      }
+
+      section {
+        padding: var(--section-gap) 16px;
+      }
+
+      .hero {
+        padding: 20px 16px;
+      }
+
+      .section-titles h2 {
+        font-size: 20px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .applications-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .icon-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .type-row {
+        grid-template-columns: 80px 100px 50px 80px 50px 1fr;
+        padding: 12px 16px;
+        min-width: 550px;
+        gap: 8px;
+      }
+
+      .tagline-block {
+        margin: 0 -16px;
+      }
+
+      .footer {
+        padding: 24px 16px;
+      }
+
+      .misuse-card {
+        padding: 24px;
+      }
+
+      .misuse-list {
+        columns: 1;
+      }
+
+      .misuse-title {
+        font-size: 16px;
+      }
+
+      .misuse-list li {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
@@ -978,6 +1365,7 @@
 
   <!-- SIDEBAR -->
   <nav class="sidebar">
+    <button class="sidebar-toggle" aria-label="Toggle sidebar" id="sidebarToggle"></button>
     <div class="sidebar-logo">
       <div class="sidebar-logo-text">GXL&CO.</div>
       <div class="sidebar-logo-sub">Brand Guidelines</div>
@@ -1884,4 +2272,43 @@
       <div class="footer-logo">GXL&CO.</div>
       <div class="footer-meta">
         <p>Brand Guidelines</p>
-        <p>Media & Event Ma
+        <p>Media & Event Management</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar toggle functionality
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    // Toggle sidebar on button click
+    sidebarToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('collapsed');
+      
+      // Store collapse state in localStorage
+      if (sidebar.classList.contains('collapsed')) {
+        localStorage.setItem('sidebarCollapsed', 'true');
+      } else {
+        localStorage.setItem('sidebarCollapsed', 'false');
+      }
+    });
+
+    // Restore sidebar state from localStorage on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+      if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+      }
+    });
+
+    // Handle navigation link clicks (optional: keep sidebar expanded on click)
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        // Uncomment the next line if you want the sidebar to auto-expand when clicking a link
+        // sidebar.classList.remove('collapsed');
+      });
+    });
+  </script>
+</body>
+</html>
